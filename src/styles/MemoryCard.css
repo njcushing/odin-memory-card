@@ -35,9 +35,20 @@
     margin: 0rem;
 }
 
+.MemoryCard .memory-card-scores-container {
+    justify-self: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
 .MemoryCard .memory-card-current-score,
 .MemoryCard .memory-card-high-score {
     color: black;
+    padding: 0rem;
+    margin: 0rem;
 }
 
 .MemoryCard .memory-cards-container {

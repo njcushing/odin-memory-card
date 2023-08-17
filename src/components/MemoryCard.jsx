@@ -53,8 +53,8 @@ const MemoryCard = () => {
 
     const scoreComponent = (
         <div className="memory-card-scores-container">
-            <h3 className="memory-card-current-score">{score}</h3>
-            <h3 className="memory-card-high-score">{highScore}</h3>
+            <h3 className="memory-card-current-score">Current Score: {score}</h3>
+            <h3 className="memory-card-high-score">High Score: {highScore}</h3>
         </div>
     )
 
