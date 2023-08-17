@@ -3,6 +3,7 @@ import './../styles/MemoryCard.css'
 
 import Card from './Card.jsx'
 import ButtonBasic from './ButtonBasic.jsx'
+import SliderBasic from './SliderBasic.jsx'
 
 const MemoryCard = () => {
     const [cardsQuantity, setCardsQuantity] = useState(30);
@@ -65,6 +66,23 @@ const MemoryCard = () => {
         </div>
     )
 
+    const quantitySliderComponent = (
+        <div className={"memory-card-quantity-slider-container"}>
+            <SliderBasic
+                labelText="Card Quantity: "
+                sliderID="memory-card-quantity-slider"
+                minValue={1}
+                maxValue={52}
+                currentValue={cardsQuantity}
+                classNames={["memory-card-quantity-slider"]}
+                changeHandler={(e) => {
+                    setCardsSelected(new Set());
+                    setCardsQuantity(e.target.value);
+                }}
+            />
+        </div>
+    )
+
     const buttonsComponent = (
         <div className={"memory-card-buttons-container"}>
             <ButtonBasic
@@ -79,6 +97,7 @@ const MemoryCard = () => {
         {titleComponent}
         {scoreComponent}
         {cardsComponent}
+        {quantitySliderComponent}
         {buttonsComponent}
     </div>)
 
