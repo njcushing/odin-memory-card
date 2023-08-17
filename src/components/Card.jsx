@@ -4,12 +4,18 @@ import './../styles/Card.css'
 const Card = ({
 
     numberValue = 0,
+    clickHandler,
 
 }) => {
 
-    return (<div className="Card">
-        {numberValue}
-    </div>)
+    return (
+        <div
+            className="Card"
+            onClick={typeof clickHandler === 'function' ? clickHandler : null}
+        >
+            {numberValue}
+        </div>
+    )
 
 }
 
