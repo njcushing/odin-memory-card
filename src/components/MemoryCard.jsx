@@ -6,6 +6,7 @@ import Card from './Card.jsx'
 const MemoryCard = () => {
     const [cardsQuantity, setCardsQuantity] = useState(30);
     const [cardsSelected, setCardsSelected] = useState(new Set());
+    const [highScore, setHighScore] = useState(0);
 
     const score = cardsSelected.size;
 
@@ -17,11 +18,14 @@ const MemoryCard = () => {
                     numberValue={i}
                     clickHandler={() => {
                         if (!cardsSelected.has(i)) {
-                            var copySet = new Set(cardsSelected);
+                            let copySet = new Set(cardsSelected);
                             copySet.add(i);
                             setCardsSelected(copySet);
+                            if (score + 1 > highScore) setHighScore(score + 1);
                         } else {
-                            setCardsSelected(new Set());
+                            let newSet = new Set();
+                            newSet.add(i);
+                            setCardsSelected(newSet);
                         }
                     }}
                     key={i}
@@ -47,6 +51,13 @@ const MemoryCard = () => {
         <h1 className={"memory-card-title"}>Memory Card Game</h1>
     )
 
+    const scoreComponent = (
+        <div className="memory-card-scores-container">
+            <h3 className="memory-card-current-score">{score}</h3>
+            <h3 className="memory-card-high-score">{highScore}</h3>
+        </div>
+    )
+
     const cardsComponent = (
         <div className={"memory-cards-container"}>
             {shuffleCards(createCards(cardsQuantity))}
@@ -55,6 +66,7 @@ const MemoryCard = () => {
 
     return (<div className="MemoryCard">
         {titleComponent}
+        {scoreComponent}
         {cardsComponent}
     </div>)
 
