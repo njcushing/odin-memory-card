@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Righteous&family=Staatliches&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,700,1,0&display=swap');
+
 :root {
+    --nunito-font-family: Nunito, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --righteous-font-family: Righteous, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --staatliches-font-family: Staatliches, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+
     --memory-card-max-width: 60rem;
     --memory-card-min-height: 50rem;
 }
@@ -17,7 +27,9 @@
 .memory-card-title {
     justify-self: center;
 
+    font-family: var(--staatliches-font-family);
     font-size: 3rem;
     color: black;
+    padding: 0.4rem 0.2rem;
     margin: 0rem;
 }
