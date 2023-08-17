@@ -13,7 +13,7 @@
     --memory-card-min-height: 50rem;
 }
 
-.memory-card {
+.MemoryCard {
     justify-self: center;
     display: grid;
 
@@ -24,7 +24,7 @@
     min-height: var(--memory-card-max-height, 50rem);
 }
 
-.memory-card-title {
+.MemoryCard .memory-card-title {
     justify-self: center;
 
     font-family: var(--staatliches-font-family);

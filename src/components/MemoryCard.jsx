@@ -7,7 +7,7 @@ const MemoryCard = () => {
         <h1 className={"memory-card-title"}>Memory Card Game</h1>
     )
 
-    return (<div className="memory-card">
+    return (<div className="MemoryCard">
         {titleComponent}
     </div>)
 
