@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './../styles/MemoryCard.css'
 
 import Card from './Card.jsx'
+import ButtonBasic from './ButtonBasic.jsx'
 
 const MemoryCard = () => {
     const [cardsQuantity, setCardsQuantity] = useState(30);
@@ -59,8 +60,13 @@ const MemoryCard = () => {
     )
 
     const cardsComponent = (
-        <div className={"memory-cards-container"}>
+        <div className={"memory-card-cards-container"}>
             {shuffleCards(createCards(cardsQuantity))}
+        </div>
+    )
+
+    const buttonsComponent = (
+        <div className={"memory-card-buttons-container"}>
         </div>
     )
 
@@ -68,6 +74,7 @@ const MemoryCard = () => {
         {titleComponent}
         {scoreComponent}
         {cardsComponent}
+        {buttonsComponent}
     </div>)
 
 }
