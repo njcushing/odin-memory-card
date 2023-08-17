@@ -1,0 +1,13 @@
+:root {
+    --memory-card-max-width: 60rem;
+    --memory-card-min-height: 50rem;
+}
+
+.memory-card {
+    justify-self: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 5px -0px rgba(0, 0, 0, 0.3);
+    width: calc(min(100vw, var(--memory-card-max-width, 60rem)));
+    min-height: var(--memory-card-max-height, 50rem);
+}

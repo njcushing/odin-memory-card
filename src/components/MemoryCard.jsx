@@ -4,8 +4,8 @@ import './../styles/MemoryCard.css'
 const MemoryCard = () => {
 
     return (
-        <>
-        </>
+        <div className="memory-card">
+        </div>
     )
 
 }
