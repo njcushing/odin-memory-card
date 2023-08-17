@@ -16,6 +16,7 @@
 .MemoryCard {
     justify-self: center;
     display: grid;
+    grid-template-rows: auto 1fr auto;
 
     background-color: white;
     border-radius: 12px;
@@ -32,4 +33,16 @@
     color: black;
     padding: 0.4rem 0.2rem;
     margin: 0rem;
+}
+
+.MemoryCard .memory-cards-container {
+    align-self: center;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+    height: auto;
+    padding: 1rem;
 }

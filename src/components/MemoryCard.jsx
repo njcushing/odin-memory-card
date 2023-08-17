@@ -12,7 +12,7 @@ const createCards = (quantity) => {
 }
 
 const MemoryCard = () => {
-    const [cardsQuantity, setCardsQuantity] = useState(10);
+    const [cardsQuantity, setCardsQuantity] = useState(30);
 
     const titleComponent = (
         <h1 className={"memory-card-title"}>Memory Card Game</h1>
