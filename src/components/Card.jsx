@@ -8,6 +8,7 @@ const Card = ({
 }) => {
 
     return (<div className="Card">
+        {numberValue}
     </div>)
 
 }
