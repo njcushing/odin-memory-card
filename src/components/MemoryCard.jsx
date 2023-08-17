@@ -69,7 +69,7 @@ const MemoryCard = () => {
     const quantitySliderComponent = (
         <div className={"memory-card-quantity-slider-container"}>
             <SliderBasic
-                labelText="Card Quantity: "
+                labelText={`Card Quantity: ${cardsQuantity}`}
                 sliderID="memory-card-quantity-slider"
                 minValue={1}
                 maxValue={52}
