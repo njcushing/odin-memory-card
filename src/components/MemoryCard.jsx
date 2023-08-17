@@ -11,8 +11,21 @@ const createCards = (quantity) => {
     return cards;
 }
 
+const shuffleCards = (cards) => {   /* Fisher-Yates Shuffle */
+    let i = cards.length;
+
+    while (i != 0) {
+        let rand = Math.floor(Math.random() * i);
+        i--;
+        [cards[i], cards[rand]] = [cards[rand], cards[i]];
+    }
+
+    return cards;
+}
+
 const MemoryCard = () => {
     const [cardsQuantity, setCardsQuantity] = useState(30);
+    const [cardsSelected, setCardsSelected] = useState(new Set());
 
     const titleComponent = (
         <h1 className={"memory-card-title"}>Memory Card Game</h1>
@@ -20,7 +33,7 @@ const MemoryCard = () => {
 
     const cardsComponent = (
         <div className={"memory-cards-container"}>
-            {createCards(cardsQuantity)}
+            {shuffleCards(createCards(cardsQuantity))}
         </div>
     )
 
