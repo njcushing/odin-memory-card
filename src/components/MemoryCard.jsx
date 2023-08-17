@@ -70,6 +70,7 @@ const MemoryCard = () => {
             <ButtonBasic
                 buttonText="Reset"
                 classNames={["memory-card-button-reset"]}
+                clickHandler={() => setCardsSelected(new Set())}
             />
         </div>
     )
