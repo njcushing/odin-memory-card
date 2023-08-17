@@ -62,3 +62,30 @@
     height: auto;
     padding: 1rem;
 }
+
+.MemoryCard .memory-card-buttons-container {
+    justify-self: center;
+
+    display: flex;
+    gap: 1rem;
+
+    padding: 1rem;
+}
+
+.MemoryCard .memory-card-button-reset {
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 0.2rem 0.4rem;
+    min-width: 10rem;
+    min-height: 2rem;
+    background-color: #cf971e;
+}
+.MemoryCard .memory-card-button-reset:hover {
+    background-color: #dda837;
+}
+.MemoryCard .memory-card-button-reset:active {
+    background-color: #c48b0f;
+}

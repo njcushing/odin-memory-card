@@ -67,6 +67,10 @@ const MemoryCard = () => {
 
     const buttonsComponent = (
         <div className={"memory-card-buttons-container"}>
+            <ButtonBasic
+                buttonText="Reset"
+                classNames={["memory-card-button-reset"]}
+            />
         </div>
     )
 
