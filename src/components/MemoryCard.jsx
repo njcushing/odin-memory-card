@@ -3,10 +3,13 @@ import './../styles/MemoryCard.css'
 
 const MemoryCard = () => {
 
-    return (
-        <div className="memory-card">
-        </div>
+    const titleComponent = (
+        <h1 className={"memory-card-title"}>Memory Card Game</h1>
     )
+
+    return (<div className="memory-card">
+        {titleComponent}
+    </div>)
 
 }
 
