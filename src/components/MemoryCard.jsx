@@ -9,7 +9,7 @@ import SliderBasic from './SliderBasic.jsx'
 let cardImages = [];
 
 const MemoryCard = () => {
-    const [cardsQuantity, setCardsQuantity] = useState(30);
+    const [cardsQuantity, setCardsQuantity] = useState(20);
     const [cardsSelected, setCardsSelected] = useState(new Set());
     const [highScore, setHighScore] = useState(0);
 
@@ -90,12 +90,12 @@ const MemoryCard = () => {
                 labelText={`Card Quantity: ${cardsQuantity}`}
                 sliderID="memory-card-quantity-slider"
                 minValue={10}
-                maxValue={52}
+                maxValue={30}
                 currentValue={cardsQuantity}
                 classNames={["memory-card-quantity-slider"]}
                 changeHandler={(e) => {
                     setCardsSelected(new Set());
-                    setCardsQuantity(Math.max(10, Math.min(52, e.target.value)));
+                    setCardsQuantity(Math.max(10, Math.min(30, e.target.value)));
                 }}
             />
         </div>
