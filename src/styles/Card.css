@@ -1,29 +1,33 @@
 :root {
-    --card-width: 5rem;
-    --card-height: 7rem;
+    --card-width: 7rem;
+    --card-height: calc(var(--card-width, 7rem) * 1.4);
+
+    --API-SVG-card-width: calc(var(--card-width, 7rem) * 3.36);
+    --API-SVG-card-position-top: calc(var(--API-SVG-card-width, 1rem) * -0.4995);
+    --API-SVG-card-position-left: calc(var(--API-SVG-card-width, 1rem) * -0.3515);
+    --API-SVG-card-border-radius: calc(var(--API-SVG-card-width, 1rem) * -0.3515);
 }
 
 .Card.preload {
     outline: 2px solid black;
-    border-radius: 0.2rem;
 }
 
 .Card {
     display: grid; /* SVGs from this API have a ton of 'white space' around them; this prevents cursor boundary problems */
     position: relative;
 
-    outline: 2px solid black;
-    border-radius: 0.2rem;
+    outline: calc(var(--API-SVG-card-width, 1rem) * 0.009) solid black;
+    border-radius: calc(var(--API-SVG-card-width, 1rem) * 0.011);
     box-shadow: 0px 4px 5px -0px rgba(0, 0, 0, 0.3);
     width: var(--card-width, 5rem);
-    height: var(--card-height, 7rem);
+    height: var(--card-height, calc(var(--card-width, 7rem) * 1.4));
 }
 
 .Card-image { /* All this is subject to change; the SVGs from this API need quite precise positioning */
     position: relative;
-    top: -8.45rem;
-    left: -5.95rem;
+    top: var(--API-SVG-card-position-top, -0.5rem);
+    left: var(--API-SVG-card-position-left, -0.5rem);
 
-    width: 16.9rem;
+    width: var(--API-SVG-card-width, 1rem);
     height: auto;
 }
