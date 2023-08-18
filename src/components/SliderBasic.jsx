@@ -11,7 +11,7 @@ const SliderBasic = ({
     valid = true,
 
 }) => {
-
+    
     const labelElement = (
         <label
             htmlFor={id}

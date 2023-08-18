@@ -35,8 +35,8 @@ const MemoryCard = () => {
         for (let i = 0; i < quantity; i++) {
             cards.push(
                 <Card
-                    numberValue={i}
                     cardImage={cardImages[i]}
+                    classNames={["no-select"]}
                     clickHandler={() => {
                         if (!won) {
                             if (!cardsSelected.has(i)) {
@@ -75,7 +75,7 @@ const MemoryCard = () => {
     )
 
     const quantitySliderComponent = (
-        <div className={"memory-card-quantity-slider-container"} key="a">
+        <div className={"memory-card-quantity-slider-container"}>
             <SliderBasic
                 labelText={`Card Quantity: ${cardsQuantity}`}
                 sliderID="memory-card-quantity-slider"

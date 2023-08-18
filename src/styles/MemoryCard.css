@@ -70,8 +70,6 @@
 .MemoryCard .memory-card-game-won {
     font-family: var(--nunito-font-family);
     color: black;
-    padding: 0rem;
-    margin: 0rem;
 }
 .MemoryCard .memory-card-game-won {
     color: rgb(50, 177, 0);
