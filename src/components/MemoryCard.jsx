@@ -71,13 +71,13 @@ const MemoryCard = () => {
             <SliderBasic
                 labelText={`Card Quantity: ${cardsQuantity}`}
                 sliderID="memory-card-quantity-slider"
-                minValue={1}
+                minValue={10}
                 maxValue={52}
                 currentValue={cardsQuantity}
                 classNames={["memory-card-quantity-slider"]}
                 changeHandler={(e) => {
                     setCardsSelected(new Set());
-                    setCardsQuantity(e.target.value);
+                    setCardsQuantity(Math.max(10, Math.min(52, e.target.value)));
                 }}
             />
         </div>
