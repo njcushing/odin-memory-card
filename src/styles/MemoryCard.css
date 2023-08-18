@@ -44,11 +44,15 @@
 }
 
 .MemoryCard .memory-card-current-score,
-.MemoryCard .memory-card-high-score {
+.MemoryCard .memory-card-high-score,
+.MemoryCard .memory-card-game-won {
     font-family: var(--nunito-font-family);
     color: black;
     padding: 0rem;
     margin: 0rem;
+}
+.MemoryCard .memory-card-game-won {
+    color: rgb(50, 177, 0);
 }
 
 .MemoryCard .memory-card-cards-container {

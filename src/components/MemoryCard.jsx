@@ -14,6 +14,7 @@ const MemoryCard = () => {
     const [highScore, setHighScore] = useState(0);
 
     const score = cardsSelected.size;
+    const won = score === cardsQuantity;
 
     useEffect(() => {
         const fetchCardImages = async () => {
@@ -37,15 +38,17 @@ const MemoryCard = () => {
                     numberValue={i}
                     cardImage={cardImages[i]}
                     clickHandler={() => {
-                        if (!cardsSelected.has(i)) {
-                            let copySet = new Set(cardsSelected);
-                            copySet.add(i);
-                            setCardsSelected(copySet);
-                            if (score + 1 > highScore) setHighScore(score + 1);
-                        } else {
-                            let newSet = new Set();
-                            newSet.add(i);
-                            setCardsSelected(newSet);
+                        if (!won) {
+                            if (!cardsSelected.has(i)) {
+                                let copySet = new Set(cardsSelected);
+                                copySet.add(i);
+                                setCardsSelected(copySet);
+                                if (score + 1 > highScore) setHighScore(score + 1);
+                            } else {
+                                let newSet = new Set();
+                                newSet.add(i);
+                                setCardsSelected(newSet);
+                            }
                         }
                     }}
                     key={i}
@@ -75,6 +78,7 @@ const MemoryCard = () => {
         <div className="memory-card-scores-container">
             <h3 className="memory-card-current-score">Current Score: {score}</h3>
             <h3 className="memory-card-high-score">High Score: {highScore}</h3>
+            {won ? <h3 className="memory-card-game-won">YOU WON! Press 'Reset' to play again!</h3> : null}
         </div>
     )
 
@@ -106,7 +110,7 @@ const MemoryCard = () => {
             <ButtonBasic
                 buttonText="Reset"
                 classNames={["memory-card-button-reset"]}
-                clickHandler={() => setCardsSelected(new Set())}
+                clickHandler={() => setCardsSelected(new Set()) }
             />
         </div>
     )
