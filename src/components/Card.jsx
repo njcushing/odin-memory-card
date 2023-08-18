@@ -3,18 +3,23 @@ import './../styles/Card.css'
 
 const Card = ({
 
-    cardImage = "",
+    cardImage = undefined,
     classNames = [],
     clickHandler,
 
 }) => {
 
-    const imageElement = cardImage !== "" ? (
-        <img
+    const imageElement = cardImage !== undefined ? (
+        <div
             onClick={typeof clickHandler === 'function' ? clickHandler : null}
             className={["Card"].concat(classNames).join(" ")}
-            src={cardImage}
-        ></img>
+        >
+            <img
+                src={cardImage}
+                className={["Card-image"].concat(classNames).join(" ")}
+                style={{pointerEvents: 'none'}}
+            ></img>
+        </div>
     ) : (
         <div
             className={["Card preload"].concat(classNames).join(" ")}

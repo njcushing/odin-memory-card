@@ -1,13 +1,29 @@
 :root {
-    --card-width: 3rem;
-    --card-height: 5rem;
+    --card-width: 5rem;
+    --card-height: 7rem;
+}
+
+.Card.preload {
+    outline: 2px solid black;
+    border-radius: 0.2rem;
 }
 
 .Card {
-    background-color: rgb(173, 173, 173);
-    border: 2px solid black;
-    border-radius: 6px;
+    display: grid; /* SVGs from this API have a ton of 'white space' around them; this prevents cursor boundary problems */
+    position: relative;
+
+    outline: 2px solid black;
+    border-radius: 0.2rem;
     box-shadow: 0px 4px 5px -0px rgba(0, 0, 0, 0.3);
-    width: var(--card-width, 3rem);
-    height: var(--card-height, 5rem);
+    width: var(--card-width, 5rem);
+    height: var(--card-height, 7rem);
+}
+
+.Card-image { /* All this is subject to change; the SVGs from this API need quite precise positioning */
+    position: relative;
+    top: -8.45rem;
+    left: -5.95rem;
+
+    width: 16.9rem;
+    height: auto;
 }
