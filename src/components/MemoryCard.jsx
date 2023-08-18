@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { useEffect } from 'react'
 import './../styles/MemoryCard.css'
 
 import Card from './Card.jsx'
 import ButtonBasic from './ButtonBasic.jsx'
 import SliderBasic from './SliderBasic.jsx'
+
+let cardImages = [];
 
 const MemoryCard = () => {
     const [cardsQuantity, setCardsQuantity] = useState(30);
@@ -12,12 +15,27 @@ const MemoryCard = () => {
 
     const score = cardsSelected.size;
 
+    useEffect(() => {
+        const fetchCardImages = async () => {
+            const resp = await fetch("https://www.deckofcardsapi.com/api/deck/new/draw/?count=52");
+            const respParsed = await resp.json();
+            const cards = respParsed.cards;
+            for (const card in cards) {
+                cardImages.push(cards[card].images.svg)
+            }
+            setCardsSelected(new Set()); /* Initialising game here when all image URLs have been acquired */
+        }
+        fetchCardImages(cardImages);
+        return () => { cardImages = []; }
+    }, []);
+
     const createCards = (quantity) => {
         const cards = [];
         for (let i = 0; i < quantity; i++) {
             cards.push(
                 <Card
                     numberValue={i}
+                    cardImage={cardImages[i]}
                     clickHandler={() => {
                         if (!cardsSelected.has(i)) {
                             let copySet = new Set(cardsSelected);
