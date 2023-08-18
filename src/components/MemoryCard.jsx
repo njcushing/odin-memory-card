@@ -74,22 +74,8 @@ const MemoryCard = () => {
         <h1 className={"memory-card-title"}>Memory Card Game</h1>
     )
 
-    const scoreComponent = (
-        <div className="memory-card-scores-container">
-            <h3 className="memory-card-current-score">Current Score: {score}</h3>
-            <h3 className="memory-card-high-score">High Score: {highScore}</h3>
-            {won ? <h3 className="memory-card-game-won">YOU WON! Press 'Reset' to play again!</h3> : null}
-        </div>
-    )
-
-    const cardsComponent = (
-        <div className={"memory-card-cards-container"}>
-            {shuffleCards(createCards(cardsQuantity))}
-        </div>
-    )
-
     const quantitySliderComponent = (
-        <div className={"memory-card-quantity-slider-container"}>
+        <div className={"memory-card-quantity-slider-container"} key="a">
             <SliderBasic
                 labelText={`Card Quantity: ${cardsQuantity}`}
                 sliderID="memory-card-quantity-slider"
@@ -105,6 +91,20 @@ const MemoryCard = () => {
         </div>
     )
 
+    const scoreComponent = (
+        <div className="memory-card-scores-container">
+            <h3 className="memory-card-current-score">Current Score: {score}</h3>
+            <h3 className="memory-card-high-score">High Score: {highScore}</h3>
+            {won ? <h3 className="memory-card-game-won">YOU WON! Press 'Reset' to play again!</h3> : null}
+        </div>
+    )
+
+    const cardsComponent = (
+        <div className={"memory-card-cards-container"}>
+            {shuffleCards(createCards(cardsQuantity))}
+        </div>
+    )
+
     const buttonsComponent = (
         <div className={"memory-card-buttons-container"}>
             <ButtonBasic
@@ -117,9 +117,9 @@ const MemoryCard = () => {
 
     return (<div className="MemoryCard">
         {titleComponent}
+        {quantitySliderComponent}
         {scoreComponent}
         {cardsComponent}
-        {quantitySliderComponent}
         {buttonsComponent}
     </div>)
 
