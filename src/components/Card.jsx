@@ -3,20 +3,25 @@ import './../styles/Card.css'
 
 const Card = ({
 
-    numberValue = 0,
+    cardImage = "",
     classNames = [],
     clickHandler,
 
 }) => {
 
-    return (
-        <div
+    const imageElement = cardImage !== "" ? (
+        <img
             onClick={typeof clickHandler === 'function' ? clickHandler : null}
             className={["Card"].concat(classNames).join(" ")}
-        >
-            {numberValue}
-        </div>
+            src={cardImage}
+        ></img>
+    ) : (
+        <div
+            className={["Card preload"].concat(classNames).join(" ")}
+        ></div>
     )
+    
+    return imageElement
 
 }
 
